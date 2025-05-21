@@ -12,6 +12,15 @@ struct Node
 
 // Insert a new node at the beggining of the linked list
 
+struct Node *insertAtBeggining(struct Node *head, int data)
+{
+  struct Node *ptr;
+  ptr = (struct Node *)malloc(sizeof(struct Node));
+  ptr->data = data;
+  ptr->next = head;
+  return ptr;
+}
+
 void traverseLinkedList(struct Node *head)
 {
   struct Node *ptr = head;
@@ -22,14 +31,13 @@ void traverseLinkedList(struct Node *head)
   }
 }
 
-
 int main()
 {
   struct Node *head;
   struct Node *second;
   struct Node *third;
 
-   // Allocate the memory for linkedList in heap
+  // Allocate the memory for linkedList in heap
   head = (struct Node *)malloc(sizeof(struct Node));
   second = (struct Node *)malloc(sizeof(struct Node));
   third = (struct Node *)malloc(sizeof(struct Node));
@@ -43,6 +51,9 @@ int main()
   second->next = third;
   third->data = 23;
   third->next = NULL;
+  traverseLinkedList(head);
+  head = insertAtBeggining(head, 20);
+  printf("After inserting at the beginning\n");
   traverseLinkedList(head);
   return 0;
 }
