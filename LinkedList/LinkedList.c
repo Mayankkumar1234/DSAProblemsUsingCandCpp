@@ -2,13 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Program to Create a linked list i
+// Program to Create a linked list..
 
 struct Node
 {
   int data;
   struct Node *next;
 };
+
+// Insert a new node at the beggining of the linked list
 
 void traverseLinkedList(struct Node *head)
 {
